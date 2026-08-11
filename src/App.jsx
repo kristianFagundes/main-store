@@ -11,7 +11,7 @@ function App() {
   const {subscribeTodos, loading, error, setLoading} = useTarefasStore 
 
   return (
-    <>
+    <div className="app-container">
     {/*  fragmento <> </> envolve o componente sem alterar a estilização */}
 
     {/* todo componente dentro do html fica com a primeira letra maiuscula ex.: <Todoslista/> */}
@@ -26,7 +26,7 @@ function App() {
       <input type="submit" value="Add"/>
     </main>
 
-   </>
+   </div>
    
   )
 }
