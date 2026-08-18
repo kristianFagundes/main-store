@@ -1,19 +1,16 @@
-html{
+html {
     background-color: #000000;
 }
-.hero-title {
-    font-family: 'Roboto', sans-serif;
-    border: 1px solid #aca5a5;
-    border-radius: 5px;
-    background-color: #e4ebff;
-    color: #4b4444;
-    text-align: center;
-    width: fit-content;
-    padding: 5px 10px;
+
+body {
+
+    font-size: 62, 5%;
+    height: 90vh;
+    width: 90vw;
 }
 
 .app-container {
-    margin: 5% auto;
+    margin: 6em auto;
     width: 500px;
     height: 400px;
     border: 1px solid #aca5a5;
@@ -24,4 +21,30 @@ html{
     border-radius: 10px;
     background-color: #3a67e49d;
 
+}
+
+.hero-nav {
+    display: flex;
+    gap: 1em;
+}
+
+.btn-nav {
+    background-color: #353232;
+    color: rgb(168, 169, 224);
+    width: fit-content;
+    padding: .5em;
+    border-radius: 4px 9px;
+
+}
+
+.hero-title {
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #aca5a5;
+    border-radius: 5px;
+    background-color: #e4ebff;
+    color: #4b4444;
+    text-align: center;
+    width: fit-content;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 5px #030303;
 }

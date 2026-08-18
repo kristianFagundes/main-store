@@ -8,38 +8,34 @@ import './style.css'
 
 function App() {
 
-  const {subscribeTodos, loading, error, setLoading} = useTarefasStore 
+  const { subscribeTodos, loading, error, setLoading } = useTarefasStore
 
   return (
     <div className="app-container">
-    {/*  fragmento <> </> envolve o componente sem alterar a estilização */}
+      {/*  fragmento <> </> envolve o componente sem alterar a estilização */}
 
-    {/* todo componente dentro do html fica com a primeira letra maiuscula ex.: <Todoslista/> */}
+      {/* todo componente dentro do html fica com a primeira letra maiuscula ex.: <Todoslista/> */}
 
-   {/* para por uma classe no react se usa className */}
+      {/* para por uma classe no react se usa className */}
 
-    <header>
-      <h1 className="hero-title">Lista de Tarefas</h1>
-    </header>
-    <main>
-      <input type="text"/>
-      <input type="submit" value="Add"/>
-    </main>
+      <header>
+        <nav className='hero-nav'>
+          <button className='btn-nav' onClick={}>Cancelar Tarefas</button>
+          <button className='btn-nav' onClick>Buscar Tarefas</button>
+          <button className='btn-nav' onClick>Deletar Tarefas</button>
+        </nav>
 
-   </div>
-   
+        <h1 className="hero-title">Lista de Tarefas</h1>
+      </header>
+      <main>
+        <input type="text" />
+        <input type="submit" value="Add" />
+      </main>
+
+    </div>
+
   )
 }
 
 export default App;
 
-    {/*
-     if ternário:
-
-     condição antes do ? é a condição que vai ser testada, se for true executa o que está depois do ? e antes do : , se for false executa o que está depois do :
-
-     error !== null ? <p>Carregando...</p> : error ? <p>{error}</p> : <TodosLista/>
-
-    
-    
-    */}
