@@ -1,5 +1,6 @@
 html {
     background-color: #000000;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 body {
@@ -7,6 +8,14 @@ body {
     font-size: 62, 5%;
     height: 90vh;
     width: 90vw;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+
 }
 
 .app-container {
@@ -47,4 +56,15 @@ body {
     width: fit-content;
     padding: 5px 10px;
     box-shadow: 2px 2px 5px #030303;
+    font-size: 3.2em;
+}
+
+main {
+    display: flex;
+    gap: 1em;
+}
+
+.input-text{
+    border-radius: 4px 9px;
+    padding: .5em;
 }

@@ -19,17 +19,18 @@ function App() {
       {/* para por uma classe no react se usa className */}
 
       <header>
+        <h1 className="hero-title">Lista de Tarefas</h1>
         <nav className='hero-nav'>
-          <button className='btn-nav' onClick={}>Cancelar Tarefas</button>
+          <button className='btn-nav' onClick>Cancelar Tarefas</button>
           <button className='btn-nav' onClick>Buscar Tarefas</button>
           <button className='btn-nav' onClick>Deletar Tarefas</button>
         </nav>
 
-        <h1 className="hero-title">Lista de Tarefas</h1>
+
       </header>
       <main>
-        <input type="text" />
-        <input type="submit" value="Add" />
+        <input className = "input-text" type="text" />
+        <input className='btn-nav' type="submit" value="Add" />
       </main>
 
     </div>

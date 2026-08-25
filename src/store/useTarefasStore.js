@@ -49,6 +49,7 @@ export const useTarefasStore = create((get, set) => ({
 
     },
 
+    //cancelar tarefas. unsubscribe é uma função do firebase que cancela a inscrição em uma coleção ou documento.
     unsubscribeTodos: () => {
 
         const { unsubscribe } = get()
@@ -73,6 +74,32 @@ export const useTarefasStore = create((get, set) => ({
             console.error('Erro ao adicionar tarefa:', erro)
             set({erro:'Não foi possível adicionar tarefa.'})
         }
-    }
+    },
+    // atualizar tarefa. updateDoc é uma função do firebase que atualiza um documento em uma coleção. 
+    // essa parte do codigo é referente a caixa de check que marca a tarefa como concluída ou não concluída. O id é o id do documento no firebase, e completed é o estado da tarefa (concluída ou não concluída).
+    changeTodos: async (id, completed) => {
+        try {
+            const tarefaRef = doc(db, 'todos', id)
+            await updateDoc(tarefaRef, { completed: !completed })
+        }
+        catch (erro) {
+            console.error('Erro ao atualizar tarefa:', erro)
+            set({ erro: 'Não foi possível atualizar a tarefa.' })
+        }       
+      
+    },
 
+     // deletar tarefa. deleteDoc é uma função do firebase que deleta um documento em uma coleção. O id é o id do documento no firebase.
+
+    deleteTodos: async (id) => {
+        try {
+            const tarefaRef = doc(db, 'todos', id)
+            await deleteDoc(tarefaRef)
+        } catch (erro) {
+            console.error('Erro ao deletar tarefa:', erro)
+            set({ erro: 'Não foi possível deletar a tarefa.' })
+        } 
+    },
+    limparErro: () => set({ erro: null }),
+      
 }))
