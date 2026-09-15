@@ -3,6 +3,11 @@ import { create } from 'zustand'
 import { db } from '../db/firebase'
 import { onSnapshot, query, collection, addDoc } from 'firebase/firestore'
 
+
+// Aqui ficam armazenadas todas as funções que serão usadas no app, como adicionar, atualizar e deletar tarefas. Que são dos ZUSTAND e do FIREBASE. O ZUSTAND é uma biblioteca de gerenciamento de estado para React, e o FIREBASE é uma plataforma de desenvolvimento de aplicativos que oferece serviços como banco de dados em tempo real, autenticação e hospedagem.
+
+
+
 // faz a conexão com a coleção do firebase, no caso a coleção "todos"
 const referenciaColecaoTodos = collection(db, 'todos')
 

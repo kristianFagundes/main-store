@@ -5,7 +5,7 @@ html {
 
 body {
 
-    font-size: 62, 5%;
+    font-size: 62.5%;
     height: 90vh;
     width: 90vw;
 }
@@ -18,7 +18,7 @@ header {
 
 }
 
-.app-container {
+.aplicativo {
     margin: 6em auto;
     width: 500px;
     height: 400px;
