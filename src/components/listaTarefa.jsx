@@ -1,9 +1,10 @@
 import { useTarefasStore } from '../store/useTarefasStore'
 import ItemTarefa from './itemTarefa'
 
-export default function ListaTarefas() {
-  const todos = useTarefasStore((state) => state.tarefas)
-  const loading = useTarefasStore((state) => state.carregando)
+
+export default function ListaTarefa() {
+  const todos = useTarefasStore((state) => state.todos)
+  const loading = useTarefasStore((state) => state.loading)
 
   if (loading) {
     return <p className="lista-tarefas__status">Carregando tarefas…</p>

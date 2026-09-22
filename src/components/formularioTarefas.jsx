@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTarefasStore } from '../store/useTarefasStore'
 
 
-export default function formsTodos() {
+export default function FormularioTarefas() {
     const [title, setTitle] = useState('')
     // enviando
     const [sending, setSending] = useState(false)

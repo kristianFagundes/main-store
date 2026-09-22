@@ -1,7 +1,7 @@
 import { subscribe } from 'firebase/data-connect'
 import { create } from 'zustand'
 import { db } from '../db/firebase'
-import { onSnapshot, query, collection, addDoc } from 'firebase/firestore'
+import { onSnapshot, query, collection, addDoc, serverTimestamp, doc, deleteDoc, updateDoc} from 'firebase/firestore'
 
 
 // Aqui ficam armazenadas todas as funções que serão usadas no app, como adicionar, atualizar e deletar tarefas. Que são dos ZUSTAND e do FIREBASE. O ZUSTAND é uma biblioteca de gerenciamento de estado para React, e o FIREBASE é uma plataforma de desenvolvimento de aplicativos que oferece serviços como banco de dados em tempo real, autenticação e hospedagem.
@@ -13,15 +13,16 @@ const referenciaColecaoTodos = collection(db, 'todos')
 
 // get e set é usado para alterar os objetos (todos, loading, error) da variavel (useTarefaStore)
 // get só se usa dentro do useTarefasStore. No arquivo app chamo direto a variável
-export const useTarefasStore = create((get, set) => ({
+export const useTarefasStore = create((set, get) => ({
     //aqui dentro estão todas as tarefas do que serão executadas no app
     todos: [],
+    erro: null,
     loading: true,
-    error: null,
     unsubscribe: null,
+    limparErro: null,
 
 
-
+    //inscrever tarefa
     SubscribeTodos: () => {
         set({ loading: true, error: null })
         //consultar tarefa do firebase, e ordena por data de criação
@@ -57,7 +58,7 @@ export const useTarefasStore = create((get, set) => ({
     //cancelar tarefas. unsubscribe é uma função do firebase que cancela a inscrição em uma coleção ou documento.
     unsubscribeTodos: () => {
 
-        const { unsubscribe } = get()
+        const { unsubscribe } = get();
         if (unsubscribe) unsubscribe()
     },
 
